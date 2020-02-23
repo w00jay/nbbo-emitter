@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: emitter
+  name: emitter
+spec:
+  containers:
+  - image: woojay/nbbo-emitter
+    name: emitter
+    resources: {}
+    env:
+    - name: SERVER
+      value: "receiver"
+    - name: SERVER_PORT
+      value: "2000"
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+status: {}
