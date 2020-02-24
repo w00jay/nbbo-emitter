@@ -48,7 +48,7 @@ func main() {
 		client := &http.Client{Timeout: time.Second * 10}
 
 		// Manual jitter
-		r := rand.Intn(1000)
+		r := rand.Intn(10)
 		time.Sleep(time.Duration(r) * time.Millisecond)
 
 		// Send request
@@ -66,9 +66,10 @@ func main() {
 		// }
 		// fmt.Printf("%s\n", body)
 
+		// Debug counter
 		i++
 		if i >= 200 {
-			log.Fatal("done with 10")
+			log.Fatal("done with 200")
 		}
 	}
 	err = s.Err()
